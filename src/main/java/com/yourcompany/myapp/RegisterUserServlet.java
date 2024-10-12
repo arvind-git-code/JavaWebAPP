@@ -20,7 +20,7 @@ public class RegisterUserServlet extends HttpServlet {
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@192.168.132.169:1521:FREE", "SCOTT", "arvind");
+            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@domain:1521:db_name", "user", "password");
 
             String sql = "INSERT INTO users (name, mobile_number) VALUES (?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
